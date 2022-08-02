@@ -27,7 +27,8 @@ void construct_friction_constraint_set(
     double dhat,
     double barrier_stiffness,
     double mu,
-    FrictionConstraints& friction_constraint_set)
+    FrictionConstraints& friction_constraint_set,
+    int dummy)
 {
     return construct_friction_constraint_set(
         mesh, V, contact_constraint_set, dhat, barrier_stiffness,
