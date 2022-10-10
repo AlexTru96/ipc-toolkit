@@ -11,7 +11,7 @@ include(FetchContent)
 FetchContent_Declare(
     gpu_ccd
     GIT_REPOSITORY https://github.com/dbelgrod/CCD-GPU.git
-    GIT_TAG deaf52698f1e8bb0c56d4e04619bb9414a0be746
+    GIT_TAG feb54c029a5fb7b8dd195b5485c3f9e85324199b
     GIT_SHALLOW FALSE
 )
 FetchContent_MakeAvailable(gpu_ccd)
@@ -20,3 +20,5 @@ add_library(gpu_ccd::gpu_ccd ALIAS CCDGPU)
 
 set_target_properties(STQ_CPU PROPERTIES POSITION_INDEPENDENT_CODE ON)
 set_target_properties(CCDGPU PROPERTIES POSITION_INDEPENDENT_CODE ON)
+
+target_compile_definitions(STQ_CUDA PUBLIC KEEP_CPU_OVERLAPS)
